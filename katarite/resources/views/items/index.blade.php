@@ -5,9 +5,7 @@ $time = 1
 @section('title', 'アイテム一覧')
 @section('content')
 @include('nav')
-<div class="top__title text-center mt-3" style="font-weight:bold; font-size:24px; ">
-    Talks
-</div>
+<div class="h3 text-center mt-3 font-weight-bold">Talks</div>
 <div class="container">
     @foreach($items as $item)
         @include('items.talk')

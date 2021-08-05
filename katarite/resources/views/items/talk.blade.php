@@ -1,26 +1,26 @@
 <?php
 $times = 1;
 ?>
-<div class="card mt-3" >
-    <div class="card-body d-flex flex-row">
-        <div>
+<div class="card mt-3">
+    <div class="card-body d-flex flex-row w-100">
+        <div class="card_profile_layout">
             <h4 class="font-weight-bold">{{ $item->user->name }}</h4>
-            <div><img style="border-radius : 50%; width : 120px; height : 120px; margin-bottom:10px;" src="{{ asset( $item->img_path ) }}"></div>
-            <h6 class="mt-3" style="overflow-wrap: break-word; width:230px; text-align:left">{{ $times }}時間あたりの単価 : {{ number_format($item->price) }} 円</h6>
-            <div class="font-weight-lighter mt-3">{{ $item->created_at->format('Y/m/d H:i') }}</div>
+            <div><img class="rounded-circle image_round" src="{{ asset( $item->img_path ) }}"></div>
+            <h6 class="mt-3 text-left overflow-auto">{{ $times }}時間あたりの単価 : {{ number_format($item->price) }} 円</h6>
+            <div class="font-weight-lighter mt-3 overflow-auto">{{ $item->created_at->format('Y/m/d H:i') }}</div>
         </div>
-        <div class="card-body pt-0 ml-2">
+        <div class="card-body pt-0 card_body_layout">
             <h4 class="font-weight-bold card-title">
                 <a class="text-dark" href="{{ route('items.show', ['item' => $item]) }}">
                 {{ $item->title }}
                 </a>
             </h4>
-            <div class="card-text" style="border-top:solid; width:600px">
-                <h5 class="mt-3" style="overflow-wrap: break-word;">{{ $item->body }}</h5>
+            <div class="card-text text-left overflow-auto border-top border-info">
+                <span class="card_text_layout">{{$item->body }}</span>
             </div>
             @if( Auth::id() !== $item->user_id )
             <!-- stripe modal -->
-            <div class="content" style="margin-top:120px">
+            <div class="btn_consul">
                 <form action="{{ route('checkout') }}" method="POST">
                     <input type="hidden" name="price" value="{{ $item->price }}">
                     <input type="hidden" name="email" value="{{ $item->user->email }}">
