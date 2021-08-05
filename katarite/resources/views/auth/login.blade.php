@@ -20,10 +20,10 @@
                                 <input class="form-control" type="password" id="password" name="password" required>
                             </div>
                             <input type="hidden" name="remember" id="remember" value="on">
-                            <button class="btn btn-block mt-2 mb-2" type="submit" style="background-color: #cdf7e8; font-size: 16px;">ログイン</button>
+                            <button class="btn btn-block mt-2 mb-2 btn_login" type="submit">ログイン</button>
                         </form>
                         <div class="mt-0">
-                            <button class="btn btn-block mt-2 mb-2" type="submit" style="background-color: #8df5f9; "><a href="{{ route('register') }}" class="card-text" >ユーザー登録はこちら</a></button>
+                            <button class="btn btn-block mt-3 mb-2 btn_register" type="submit"><a href="{{ route('register') }}" class="card-text" >ユーザー登録はこちら</a></button>
                         </div>
                     </div>
                 </div>

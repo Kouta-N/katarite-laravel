@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand" style="background-color: #cdf7e8;">
+<nav class="navbar bg-success navbar-expand">
     @guest
-        <a class="navbar-brand" href="/" ><p style="color: #7141e1"><i class="fab fa-stack-exchange mr-1"></i>Katarite<span class="h6"> guest</span></p></a>
+        <a class="navbar-brand" href="/" ><p style="color:#7141e1"><i class="fab fa-stack-exchange mr-1"></i>Katarite<span class="h6"> guest</span></p></a>
         <ul class="navbar-nav ml-auto">
         <li class="nav-item">
             <a class="nav-link" href="{{ route('register') }}"><i class="far fa-registered"></i>ユーザー登録</a>
@@ -10,7 +10,7 @@
         </li>
     @endguest
     @auth
-        <a class="navbar-brand" href="/" ><span style="color:#2e8b57"><i class="fab fa-stack-exchange mr-1"></i>Katarite</span></a>
+        <a class="navbar-brand" href="/" ><i class="fab fa-stack-exchange mr-1"></i>Katarite</a>
        <ul class="navbar-nav ml-auto">
         <!-- Dropdown -->
         <li class="nav-item dropdown">
