@@ -52,8 +52,9 @@ class ItemController extends Controller
         return redirect()->route('items.index');
     }
 
-     public function show(Item $item)
+    public function showMyPage(Item $item)
     {
-        return view('items.show', compact('item'));
+        $items = Item::all()->sortByDesc('created_at');
+        return view('items.my-page', compact('items'));
     }
 }
