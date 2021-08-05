@@ -28,7 +28,7 @@ class ItemRequest extends FormRequest
             'title' => 'required | max:40',
             'image_path' => 'image | nullable',
             'body' => 'required | max:500',
-            'price' => 'required | max:7'
+            'price' => 'required | digits_between:3,7'
         ];
     }
 

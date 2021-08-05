@@ -1,6 +1,3 @@
-@php
-$time = 1
-@endphp
 @extends('app')
 @section('title', 'アイテム一覧')
 @section('content')

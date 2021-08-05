@@ -13,7 +13,6 @@
 
 Auth::routes();
 Route::get('/', 'ItemController@index')->name('items.index');
-Route::resource('/items', 'ItemController')->except(['index','show'])->middleware('auth');
-Route::resource('/items', 'ItemController')->only(['show']);
+Route::get('/items/my-page', 'ItemController@showMyPage')->name('items.my-page');
+Route::resource('/items', 'ItemController')->except(['index'])->middleware('auth');
 Route::post('/checkout', 'CartController@checkout')->name('checkout');
-Route::get('/cart/report', 'CartController@report')->name('cart.report');

@@ -13,6 +13,6 @@
 </div>
 <div class="md-form">
     <label>料金</label>
-    <input type="number" name="price" class="form-control" value="{{ $item->price ?? old('price') ?? '0'}}">
-    <small>半角数字で入力してください。(料金を請求しない場合は、0のままで投稿してください。)</small>
+    <input type="number" name="price" class="form-control" value="{{ $item->price ?? old('price') }}">
+    <small>半角数字で3桁以上7桁以下で入力してください。</small>
 </div>

@@ -22,7 +22,9 @@
             <i class="far fa-list-alt"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <button class="dropdown-item" type="button" onclick="location.href=''"><i class="far fa-id-badge mr-1"></i>マイページ</button>
+                <button class="dropdown-item" type="button" onclick="location.href='{{ route('items.my-page') }}'"><i class="far fa-id-badge mr-1"></i>マイページ</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" type="button" onclick="location.href='{{ route('items.index') }}'"><i class="fa fa-step-backward mr-1"></i>一覧へ戻る</button>
                 <div class="dropdown-divider"></div>
                 <button form="logout-button" class="dropdown-item" type="submit"><i class="fas fa-door-open mr-1"></i>ログアウト</button>
             </div>

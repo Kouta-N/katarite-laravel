@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Customer;
 use Stripe\Charge;
-
 class CartController extends Controller
 {
     public function checkout(Request $request)
@@ -22,14 +21,10 @@ class CartController extends Controller
                 'amount' => $request->price,
                 'currency' => 'jpy'
             ));
-            return redirect('/cart/report');
+            return view('cart.report');
         } catch (\Exception $ex) {
             return $ex->getMessage();
         }
-    }
-
-    public function report()
-    {
-        return view('cart.report');
+        return redirect('/');
     }
 }

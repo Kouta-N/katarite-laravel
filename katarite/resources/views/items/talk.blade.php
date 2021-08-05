@@ -1,12 +1,9 @@
-<?php
-$times = 1;
-?>
 <div class="card mt-3">
     <div class="card-body d-flex flex-row w-100">
         <div class="card_profile_layout">
             <h4 class="font-weight-bold">{{ $item->user->name }}</h4>
             <div><img class="rounded-circle image_round" src="{{ asset( $item->img_path ) }}"></div>
-            <h6 class="mt-3 text-left overflow-auto">{{ $times }}時間あたりの単価 : {{ number_format($item->price) }} 円</h6>
+            <h6 class="mt-3 text-left overflow-auto">1時間あたりの単価 : {{ number_format($item->price) }} 円</h6>
             <div class="font-weight-lighter mt-3 overflow-auto">{{ $item->created_at->format('Y/m/d H:i') }}</div>
         </div>
         <div class="card-body pt-0 card_body_layout">
