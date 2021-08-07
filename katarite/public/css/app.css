@@ -3,6 +3,10 @@
   height: 120px;
 }
 
+.app-navbar {
+  background: linear-gradient(120deg, #0cf9e5, #5a84eb);
+}
+
 .btn_create {
   background-color: 0ffff;
 }

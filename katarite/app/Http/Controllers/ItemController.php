@@ -13,6 +13,11 @@ class ItemController extends Controller
         $this->authorizeResource(Item::class,'item');
     }
 
+    public function showHome()
+    {
+        return view('home');
+    }
+
     public function index()
     {
         $items = Item::all()->sortByDesc('created_at');

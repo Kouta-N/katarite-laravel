@@ -25,6 +25,6 @@ class CartController extends Controller
         } catch (\Exception $ex) {
             return $ex->getMessage();
         }
-        return redirect('/');
+        return redirect()->route('items.index');
     }
 }
