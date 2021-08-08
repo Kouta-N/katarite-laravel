@@ -39,7 +39,7 @@
                 <i class="far fa-list-alt"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <button class="dropdown-item" type="button" onclick="location.href='{{ route('items.my-page') }}'">
+                <button class="dropdown-item" type="button" onclick="location.href='{{ route('items.my_page') }}'">
                     <i class="far fa-id-badge mr-1"></i>
                     マイページ
                 </button>
