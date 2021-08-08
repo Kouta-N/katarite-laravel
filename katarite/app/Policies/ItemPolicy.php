@@ -33,6 +33,11 @@ class ItemPolicy
         return true;
     }
 
+    public function showMyPage(User $user, Item $item)
+    {
+        return $user -> id === $item -> user_id;
+    }
+
     /**
      * Determine whether the user can create items.
      *

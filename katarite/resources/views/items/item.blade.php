@@ -29,6 +29,8 @@
             <!-- stripe modal -->
             <div class="btn_consul">
                 <form action="{{ route('checkout') }}" method="POST">
+                    <input type="hidden" name="talker_name" value="{{ $item->user->name }}">
+                    <input type="hidden" name="title" value="{{ $item->title }}">
                     <input type="hidden" name="price" value="{{ $item->price }}">
                     <input type="hidden" name="email" value="{{ $item->user->email }}">
                     @csrf

@@ -60,6 +60,6 @@ class ItemController extends Controller
     public function showMyPage(Item $item)
     {
         $items = Item::all()->sortByDesc('created_at');
-        return view('items.my-page', compact('items'));
+        return view('items.my_page', compact('items'));
     }
 }
