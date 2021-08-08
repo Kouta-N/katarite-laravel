@@ -27,7 +27,7 @@
             </div>
             @if( Auth::id() !== $item->user_id )
             <!-- stripe modal -->
-            <div class="btn_consul">
+            <div class="mt-5">
                 <form action="{{ route('checkout') }}" method="POST">
                     <input type="hidden" name="talker_name" value="{{ $item->user->name }}">
                     <input type="hidden" name="title" value="{{ $item->title }}">
