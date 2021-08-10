@@ -1,7 +1,7 @@
 @extends('app')
 @section('title', 'ホーム画面')
 @include('nav')
-<main role="main" class="main-color">
+<main role="main">
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
