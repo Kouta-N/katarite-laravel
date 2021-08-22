@@ -13,6 +13,11 @@ class ItemController extends Controller
         $this->authorizeResource(Item::class,'item');
     }
 
+    public function showHome()
+    {
+        return view('home');
+    }
+
     public function index()
     {
         $items = Item::all()->sortByDesc('created_at');
@@ -52,8 +57,9 @@ class ItemController extends Controller
         return redirect()->route('items.index');
     }
 
-     public function show(Item $item)
+    public function showMyPage(Item $item)
     {
-        return view('items.show', compact('item'));
+        $items = Item::all()->sortByDesc('created_at');
+        return view('items.my_page', compact('items'));
     }
 }

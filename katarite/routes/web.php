@@ -12,8 +12,8 @@
 */
 
 Auth::routes();
-Route::get('/', 'ItemController@index')->name('items.index');
-Route::resource('/items', 'ItemController')->except(['index','show'])->middleware('auth');
-Route::resource('/items', 'ItemController')->only(['show']);
+Route::get('/', 'ItemController@showHome')->name('home');
+Route::resource('/items', 'ItemController')->except(['index'])->middleware('auth');
+Route::resource('/items', 'ItemController')->only(['index']);
+Route::get('/my_page', 'ItemController@showMyPage')->middleware('auth')->name('items.my_page');
 Route::post('/checkout', 'CartController@checkout')->name('checkout');
-Route::get('/cart/report', 'CartController@report')->name('cart.report');

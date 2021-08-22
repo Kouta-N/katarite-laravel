@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
             $table->string('title');
 			$table->string("img_path")->nullable()->default('storage/images/no_image.jpg');
             $table->text('body');
-            $table->integer('price')->nullable();
+            $table->integer('price');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

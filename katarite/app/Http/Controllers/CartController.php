@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Customer;
 use Stripe\Charge;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContractTalker;
+use App\Mail\ContractCustomer;
 class CartController extends Controller
 {
     public function checkout(Request $request)
@@ -14,7 +16,7 @@ class CartController extends Controller
         try {
             Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
             $customer = Customer::create(array(
-                'email' => $request->email,
+                'email' => $request->stripeEmail,
                 'source' => $request->stripeToken,
             ));
             $charge = Charge::create(array(
@@ -22,14 +24,35 @@ class CartController extends Controller
                 'amount' => $request->price,
                 'currency' => 'jpy'
             ));
-            return redirect('/cart/report');
+            $to_talker = [
+                [
+                'email' => $request->email,
+                'name' => '【From Katarite】相談を受けました。',
+                ]
+            ];
+            $to_customer = [
+                [
+                'email' => $request->stripeEmail,
+                'name' => '【From Katarite】契約が完了しました。',
+                ]
+            ];
+            $inputs_talker = (array(
+                'customer_email'=>$request->stripeEmail,
+                'title'=>$request->title,
+                'price'=>$request->price
+            ));
+            $inputs_customer=(array(
+                'talker_email'=>$request->email,
+                'talker_name'=>$request->talker_name,
+                'title'=>$request->title,
+                'price'=>$request->price
+            ));
+            Mail::to($to_talker)->send(new ContractTalker($inputs_talker));
+            Mail::to($to_customer)->send(new ContractCustomer($inputs_customer));
+            return view('cart.report');
         } catch (\Exception $ex) {
             return $ex->getMessage();
         }
-    }
-
-    public function report()
-    {
-        return view('cart.report');
+        return redirect()->route('items.index');
     }
 }

@@ -25,16 +25,16 @@
                                 <div class="md-form">
                                     <label for="password">パスワード</label>
                                     <input class="form-control" type="password" id="password" name="password" required>
-                                    <small>半角英数字8文字以上16文字以下で、大文字、小文字、数字をそれぞれ1文字以上が必要です。<br>(登録後の変更はできません)</small>
+                                    <small>半角英数字8文字以上16文字以下で、大文字、小文字、数字がそれぞれ1文字以上が必要です。<br>(登録後の変更はできません)</small>
                                 </div>
                                 <div class="md-form">
                                     <label for="password_confirmation">パスワード(確認)</label>
                                     <input class="form-control" type="password" id="password_confirmation" name="password_confirmation" required>
                                 </div>
-                                    <button class="btn btn-block mt-2 mb-2" type="submit" style="background-color: #cdf7e8; font-size: 16px;">ユーザー登録</button>
+                                    <button class="btn btn-block btn_register mt-3 mb-2" type="submit" >ユーザー登録</button>
                             </form>
                             <div class="mt-0">
-                                <button class="btn btn-block mt-2 mb-2" type="submit" style="background-color: #8df5f9; "> <a href="{{ route('login') }}" class="card-text" style="font-size: 16px">ログインはこちら</a></button>
+                                <button class="btn btn-block btn_login mt-2 mb-2" type="submit"> <a href="{{ route('login') }}" class="card-text" >ログインはこちら</a></button>
                             </div>
                         </div>
                     </div>
